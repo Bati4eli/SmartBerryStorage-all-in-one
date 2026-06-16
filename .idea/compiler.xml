@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="SmartBerryStorage.AppMainModule" options="-parameters" />
+      <module name="SmartBerryStorage.AppMainModule.main" options="-parameters" />
+      <module name="SmartBerryStorage.AppMainModule.test" options="-parameters" />
+      <module name="SmartBerryStorage.AppRestFileManager" options="-parameters" />
+      <module name="SmartBerryStorage.AppRestFileManager.main" options="-parameters" />
+      <module name="SmartBerryStorage.AppRestFileManager.test" options="-parameters" />
+      <module name="SmartBerryStorage.CommonLib" options="-parameters" />
+      <module name="SmartBerryStorage.CommonLib.main" options="-parameters" />
+      <module name="SmartBerryStorage.CommonLib.test" options="-parameters" />
+    </option>
+  </component>
+</project>

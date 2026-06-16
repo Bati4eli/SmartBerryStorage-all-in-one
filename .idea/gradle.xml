@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/MyCloud-AndroidClient" />
+        <option name="gradleJvm" value="jbr-17" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/MyCloud-AndroidClient" />
+            <option value="$PROJECT_DIR$/MyCloud-AndroidClient/Common-gRPC" />
+            <option value="$PROJECT_DIR$/MyCloud-AndroidClient/app" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/MyCloud-Backend" />
+        <option name="gradleJvm" value="jbr-17" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/MyCloud-Backend" />
+            <option value="$PROJECT_DIR$/MyCloud-Backend/AppMainModule" />
+            <option value="$PROJECT_DIR$/MyCloud-Backend/AppRestFileManager" />
+            <option value="$PROJECT_DIR$/MyCloud-Backend/Common-gRPC" />
+            <option value="$PROJECT_DIR$/MyCloud-Backend/CommonLib" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
