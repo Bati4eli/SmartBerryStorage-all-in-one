@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="SmartBerryStorage" target="17" />
+      <module name="SmartBerryStorage.AppMainModule" target="17" />
+      <module name="SmartBerryStorage.AppMainModule.main" target="17" />
+      <module name="SmartBerryStorage.AppMainModule.test" target="17" />
+      <module name="SmartBerryStorage.AppRestFileManager" target="17" />
+      <module name="SmartBerryStorage.AppRestFileManager.main" target="17" />
+      <module name="SmartBerryStorage.AppRestFileManager.test" target="17" />
+      <module name="SmartBerryStorage.Common-gRPC" target="17" />
+      <module name="SmartBerryStorage.Common-gRPC.main" target="17" />
+      <module name="SmartBerryStorage.Common-gRPC.test" target="17" />
+      <module name="SmartBerryStorage.CommonLib" target="17" />
+      <module name="SmartBerryStorage.CommonLib.main" target="17" />
+      <module name="SmartBerryStorage.CommonLib.test" target="17" />
+      <module name="SmartBerryStorage.main" target="17" />
+      <module name="SmartBerryStorage.test" target="17" />
+    </bytecodeTargetLevel>
+  </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="BACKEND.AppMainModule" options="-parameters" />
+      <module name="BACKEND.AppMainModule.main" options="-parameters" />
+      <module name="BACKEND.AppMainModule.test" options="-parameters" />
+      <module name="BACKEND.AppRestFileManager" options="-parameters" />
+      <module name="BACKEND.AppRestFileManager.main" options="-parameters" />
+      <module name="BACKEND.AppRestFileManager.test" options="-parameters" />
+      <module name="BACKEND.CommonLib" options="-parameters" />
+      <module name="BACKEND.CommonLib.main" options="-parameters" />
+      <module name="BACKEND.CommonLib.test" options="-parameters" />
       <module name="SmartBerryStorage.AppMainModule" options="-parameters" />
       <module name="SmartBerryStorage.AppMainModule.main" options="-parameters" />
       <module name="SmartBerryStorage.AppMainModule.test" options="-parameters" />

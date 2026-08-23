@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AppMainModule/BACKEND.AppMainModule.test.iml" filepath="$PROJECT_DIR$/.idea/modules/AppMainModule/BACKEND.AppMainModule.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/SmartBerryStorage-all-in-one.iml" filepath="$PROJECT_DIR$/.idea/SmartBerryStorage-all-in-one.iml" />
     </modules>
   </component>
