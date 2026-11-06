@@ -5,9 +5,9 @@ shell commands, and other important information, read the current plan
 <!-- SPECKIT END -->
 
 Этот каталог объединяет **три независимых git-репозитория**:
-- `MyCloud-Backend`
-- `MyCloud-AndroidClient`
-- `MyCloud-WebClient`
+- `SmartCloud-Backend-apps`
+- `SmartCloud-Android`
+- `SmartCloud-Frontend`
 
 Документ задает правила работы AI-агента на уровне общей папки.
 
@@ -19,9 +19,9 @@ shell commands, and other important information, read the current plan
 1. Инструкции пользователя в текущей задаче.
 2. Этот `AGENTS.md` (корень workspace).
 3. Локальный `AGENTS.md` целевого репозитория:
-   - `MyCloud-Backend/AGENTS.md`
-   - `MyCloud-AndroidClient/AGENTS.md`
-   - `MyCloud-WebClient/AGENTS.md`
+   - `SmartCloud-Backend-apps/AGENTS.md`
+   - `SmartCloud-Android/AGENTS.md`
+   - `SmartCloud-Frontend/AGENTS.md`
 
 При конфликте правил агент обязан явно указать конфликт и запросить приоритет у пользователя.
 
@@ -32,7 +32,7 @@ shell commands, and other important information, read the current plan
 - Не выполнять git-команды в корневой папке-агрегаторе (она не является единым репозиторием).
 
 ## 3. Git-Дисциплина
-- `MyCloud-Backend`, `MyCloud-AndroidClient` и `MyCloud-WebClient` считать отдельными зонами ответственности.
+- `SmartCloud-Backend-apps`, `SmartCloud-Android` и `SmartCloud-Frontend` считать отдельными зонами ответственности.
 - Проверять статус отдельно в каждом репозитории (`git status` в каждой папке).
 - Если изменения в нескольких репозиториях нужны по задаче, фиксировать это явно в отчете:
   - что изменено в backend;
@@ -48,11 +48,11 @@ shell commands, and other important information, read the current plan
 ## 4. Контракты И Синхронизация
 - Если меняется контракт взаимодействия (DTO, protobuf/gRPC, API-модели), проверить влияние на все клиенты.
 - При необходимости синхронно обновить backend, android-клиент и web-клиент.
-- После изменения `.proto` в backend перегенерировать TS-клиенты: `npm run gen:proto` в `MyCloud-WebClient`.
-- Android хранит копию proto в `MyCloud-AndroidClient/Common-gRPC/src/main/proto`: после изменения `.proto` в backend скопировать изменённые файлы туда.
+- После изменения `.proto` в backend перегенерировать TS-клиенты: `npm run gen:proto` в `SmartCloud-Frontend`.
+- Android хранит копию proto в `SmartCloud-Android/Common-gRPC/src/main/proto`: после изменения `.proto` в backend скопировать изменённые файлы туда.
 - В итоговом отчете отдельным пунктом описать совместимость версий и что нужно обновить/пересобрать.
 
 ## 5. Синхронизация UI Между Клиентами
-- Любое изменение UI или поведения экрана (новый экран, подпись, переход, жест, раскладка) применять одновременно в `MyCloud-WebClient` и `MyCloud-AndroidClient`, если пользователь не ограничил задачу одним клиентом.
+- Любое изменение UI или поведения экрана (новый экран, подпись, переход, жест, раскладка) применять одновременно в `SmartCloud-Frontend` и `SmartCloud-Android`, если пользователь не ограничил задачу одним клиентом.
 - Тексты, порядок элементов и переходы держать одинаковыми в обоих клиентах; платформенные отличия (жесты, системные диалоги) допустимы.
 - Если изменение невозможно применить к одному из клиентов (нет API, платформенное ограничение, другая модель навигации), в итоговом сообщении явно отметить это строкой с эмодзи `❗`: какой клиент, что не перенесено и почему.

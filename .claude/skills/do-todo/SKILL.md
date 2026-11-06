@@ -8,12 +8,12 @@ description: Execute SmartBerryStorage TODO items from the Android project backl
 ## Workflow
 
 1. Parse the requested TODO id from the user message. IDs start with three digits and may have numeric or hyphenated suffixes, for example `001.0`, `106.2`, or `090-map-filter`.
-2. Run `python .claude/skills/do-todo/scripts/find_todo.py <workspace-root> <id>` from the workspace root to locate the item in `MyCloud-AndroidClient/DO-TODO-backlog.md`. Do not start a task found only in `DO-TODO-done.md`. Never read or use `README.md` as a TODO source.
+2. Run `python .claude/skills/do-todo/scripts/find_todo.py <workspace-root> <id>` from the workspace root to locate the item in `SmartCloud-Android/DO-TODO-backlog.md`. Do not start a task found only in `DO-TODO-done.md`. Never read or use `README.md` as a TODO source.
 3. State the TODO id and its concise human-readable summary at the start of the work so the session is easy to identify.
 4. Read root `AGENTS.md` and local repo `AGENTS.md` files before changing code (they are also imported via `CLAUDE.md`).
 5. Determine affected repositories from the TODO text:
-   - `android`: work in `MyCloud-AndroidClient`.
-   - `backend`: work in `MyCloud-Backend`.
+   - `android`: work in `SmartCloud-Android`.
+   - `backend`: work in `SmartCloud-Backend-apps`.
    - `android&backend`, `back`, or mixed notes: inspect and update both repos when the contract requires it.
 6. Check `git status --short` separately in every affected repo.
 7. Implement the TODO end to end, keeping changes scoped to that numbered task.
@@ -21,7 +21,7 @@ description: Execute SmartBerryStorage TODO items from the Android project backl
 9. Add unit tests for every new feature and for changed behavior. Run the relevant unit-test suite and record the result. If a requirement cannot reasonably be unit-tested, document the reason and cover it with the strongest available verification instead.
 10. Perform self-checks proportionate to the changed TODO and affected repository:
    - Backend: run the relevant build and tests. Deploy and manually check the change when the TODO changes a running backend flow or the user requests deployment.
-   - Android/client/frontend: validate the changed flows on an emulator or connected device through ADB (path to `adb.exe` is fixed in `MyCloud-AndroidClient/AGENTS.md`). At minimum, build/install the target, drive the flow, inspect the UI tree, and capture relevant logs/screenshots or explain why a step is not applicable.
+   - Android/client/frontend: validate the changed flows on an emulator or connected device through ADB (path to `adb.exe` is fixed in `SmartCloud-Android/AGENTS.md`). At minimum, build/install the target, drive the flow, inspect the UI tree, and capture relevant logs/screenshots or explain why a step is not applicable.
    - Android: also run at least `:app:compileDebugJavaWithJavac` when code changes.
    - Record unrelated failures from the shared suite, but do not let them block a completed TODO.
 11. As soon as the TODO requirements are implemented and task-specific verification passes, mark the item `[x]`, then move its complete source block from `DO-TODO-backlog.md` to `DO-TODO-done.md`.

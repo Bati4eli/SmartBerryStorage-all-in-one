@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AppMainModule/BACKEND.AppMainModule.test.iml" filepath="$PROJECT_DIR$/.idea/modules/AppMainModule/BACKEND.AppMainModule.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/SmartBerryStorage-all-in-one.iml" filepath="$PROJECT_DIR$/.idea/SmartBerryStorage-all-in-one.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AppMainModule/ru.bati4eli.BACKEND.AppMainModule.test.iml" filepath="$PROJECT_DIR$/.idea/modules/AppMainModule/ru.bati4eli.BACKEND.AppMainModule.test.iml" />
     </modules>
   </component>
 </project>

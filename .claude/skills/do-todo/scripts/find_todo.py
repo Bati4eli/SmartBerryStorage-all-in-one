@@ -28,8 +28,8 @@ def main() -> int:
         return 2
 
     todo_files = (
-        workspace_root / "MyCloud-AndroidClient" / "DO-TODO-backlog.md",
-        workspace_root / "MyCloud-AndroidClient" / "DO-TODO-done.md",
+        workspace_root / "SmartCloud-Android" / "DO-TODO-backlog.md",
+        workspace_root / "SmartCloud-Android" / "DO-TODO-done.md",
     )
     for todo_file in todo_files:
         if not todo_file.exists():

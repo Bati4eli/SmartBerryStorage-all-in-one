@@ -14,6 +14,18 @@
       <SelectionState runConfigName="SmartCloud_Android_client.app.main">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
+      <SelectionState runConfigName="SmartCloud Android client.SmartCloud_Android_client.app">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="SmartCloud Android client.SmartCloud_Android_client.app.main">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="SmartCloud Android client.SmartCloud_Android_client.app.unitTest">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="SmartCloud Android client.SmartCloud_Android_client.app.androidTest">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
     </selectionStates>
   </component>
 </project>

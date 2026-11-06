@@ -5,7 +5,7 @@ description: Create Git commit messages for SmartBerryStorage repositories. Use 
 
 # Commit
 
-Use these rules for commits in `MyCloud-Backend` and `MyCloud-AndroidClient`:
+Use these rules for commits in `SmartCloud-Backend-apps` and `SmartCloud-Android`:
 
 - Каждый новый файл добавлять в git сразу после его создания: выполнить `git add <path>` для этого файла до следующих правок.
 - Коммиты вести на English.

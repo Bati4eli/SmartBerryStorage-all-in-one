@@ -4,26 +4,26 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/MyCloud-AndroidClient" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/SmartCloud-Android" />
         <option name="gradleJvm" value="jbr-17" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/MyCloud-AndroidClient" />
-            <option value="$PROJECT_DIR$/MyCloud-AndroidClient/Common-gRPC" />
-            <option value="$PROJECT_DIR$/MyCloud-AndroidClient/app" />
+            <option value="$PROJECT_DIR$/SmartCloud-Android" />
+            <option value="$PROJECT_DIR$/SmartCloud-Android/Common-gRPC" />
+            <option value="$PROJECT_DIR$/SmartCloud-Android/app" />
           </set>
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/MyCloud-Backend" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/SmartCloud-Backend-apps" />
         <option name="gradleJvm" value="jbr-17" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/MyCloud-Backend" />
-            <option value="$PROJECT_DIR$/MyCloud-Backend/AppMainModule" />
-            <option value="$PROJECT_DIR$/MyCloud-Backend/AppRestFileManager" />
-            <option value="$PROJECT_DIR$/MyCloud-Backend/Common-gRPC" />
-            <option value="$PROJECT_DIR$/MyCloud-Backend/CommonLib" />
+            <option value="$PROJECT_DIR$/SmartCloud-Backend-apps" />
+            <option value="$PROJECT_DIR$/SmartCloud-Backend-apps/AppMainModule" />
+            <option value="$PROJECT_DIR$/SmartCloud-Backend-apps/AppRestFileManager" />
+            <option value="$PROJECT_DIR$/SmartCloud-Backend-apps/Common-gRPC" />
+            <option value="$PROJECT_DIR$/SmartCloud-Backend-apps/CommonLib" />
           </set>
         </option>
       </GradleProjectSettings>

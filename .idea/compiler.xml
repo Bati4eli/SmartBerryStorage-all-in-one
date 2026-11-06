@@ -39,6 +39,15 @@
       <module name="SmartBerryStorage.CommonLib" options="-parameters" />
       <module name="SmartBerryStorage.CommonLib.main" options="-parameters" />
       <module name="SmartBerryStorage.CommonLib.test" options="-parameters" />
+      <module name="ru.bati4eli.BACKEND.AppMainModule" options="-parameters" />
+      <module name="ru.bati4eli.BACKEND.AppMainModule.main" options="-parameters" />
+      <module name="ru.bati4eli.BACKEND.AppMainModule.test" options="-parameters" />
+      <module name="ru.bati4eli.BACKEND.AppRestFileManager" options="-parameters" />
+      <module name="ru.bati4eli.BACKEND.AppRestFileManager.main" options="-parameters" />
+      <module name="ru.bati4eli.BACKEND.AppRestFileManager.test" options="-parameters" />
+      <module name="ru.bati4eli.BACKEND.CommonLib" options="-parameters" />
+      <module name="ru.bati4eli.BACKEND.CommonLib.main" options="-parameters" />
+      <module name="ru.bati4eli.BACKEND.CommonLib.test" options="-parameters" />
     </option>
   </component>
 </project>

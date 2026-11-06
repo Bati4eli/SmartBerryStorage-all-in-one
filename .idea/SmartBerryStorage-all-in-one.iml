@@ -9,7 +9,7 @@
   <component name="TemplatesService">
     <option name="TEMPLATE_FOLDERS">
       <list>
-        <option value="$MODULE_DIR$/MyCloud-AndroidClient/.specify/templates" />
+        <option value="$MODULE_DIR$/SmartCloud-Android/.specify/templates" />
       </list>
     </option>
   </component>

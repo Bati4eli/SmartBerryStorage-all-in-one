@@ -8,7 +8,7 @@ disable-model-invocation: true
 
 Run this workflow only after explicit user authorization to publish.
 
-- Work in `MyCloud-AndroidClient`; never run Gradle from the workspace aggregator root or the backend repository.
+- Work in `SmartCloud-Android`; never run Gradle from the workspace aggregator root or the backend repository.
 - Before publishing, prepare concise user-facing release notes from the changes included in this APK. Do not reuse the previous release's notes.
 - Use the project task name exactly: `./gradlew.bat BUILD_AND_PUBLISH`. `buildAndPublish` is not a Gradle task in this project.
 - After a successful task, read `app-update.properties` in the published directory to obtain the actual version. Overwrite `<published-directory>/diff.txt` before reporting completion. This is a required part of every publication.
