@@ -219,37 +219,48 @@ flowchart TB
     Android -->|gRPC · REST| Nginx
     Desktop -->|gRPC| Nginx
 
-    Nginx["🚪 Nginx · TLS<br/>статика и единая точка входа"]
+    Nginx["🚪 app-cloud-frontend<br/>Nginx · TLS · статика веб-клиента"]
     Nginx -->|gRPC-Web| Proxy["🔀 grpc-web-proxy"]
-    Nginx -->|REST| Rest["📤 REST-бэкенд<br/>загрузка, превью, стриминг видео"]
-    Nginx -->|gRPC| Main["⚙️ Main backend<br/>Spring Boot · файлы, медиа, альбомы, поиск"]
+    Nginx -->|REST| Rest["📤 app-cloud-rest-backend<br/>загрузка, превью, видео"]
+    Nginx -->|gRPC| Main["⚙️ app-cloud-main-backend<br/>файлы, медиа, поиск"]
     Proxy -->|gRPC| Main
     Rest -->|gRPC| Main
 
-    Main <-->|задачи обработки| Kafka["📨 Kafka"]
-    Main --> AI
-    Main --> Data
+    Main <-->|задачи обработки| Kafka["📨 kafka<br/>+ zookeeper"]
+    Main -->|gRPC| Face
+    Main -->|gRPC| Embed
+    Main -->|HTTP| Geo
+    Main -->|HTTP| VLM
 
     subgraph AI["Обработка медиа · Python + GPU"]
         direction LR
-        Face["👤 face-detector<br/>InsightFace"]
-        Embed["🔎 image-embedder<br/>jina-clip-v2"]
-        Geo["🗺️ location-preview<br/>геокодинг и превью"]
-        VLM["🧠 Ollama<br/>Qwen VL"]
+        Face["👤 app-face-detector<br/>InsightFace"]
+        Embed["🔎 app-image-embedder<br/>jina-clip-v2"]
+        Geo["🗺️ app-location-preview<br/>превью и геокодинг"]
+        VLM["🧠 ai-ollama<br/>Qwen VL"]
     end
+
+    Geo -.->|координаты| OSM["🌍 Nominatim · OpenStreetMap"]
 
     subgraph Data["Хранение"]
         direction LR
-        Db[("🗄️ PostgreSQL<br/>PostGIS · pgvector")]
-        Redis[("⚡ Redis")]
-        Files[("💾 /data<br/>оригиналы и превью")]
+        Db[("🗄️ postgresql<br/>PostGIS · pgvector")]
+        Redis[("⚡ redis")]
+        Files[("💾 том /data<br/>оригиналы и превью")]
     end
 
-    Main -.->|метрики| Mon["📈 Prometheus · Grafana"]
+    Main -->|JDBC| Db
+    Rest -->|JDBC| Db
+    Main -->|кэш| Redis
+    Main --- Files
+    Rest --- Files
+    AI -.->|читают файлы| Files
+
+    Mon["📈 prometheus · grafana"] -.->|метрики| Main
 ```
 
 > [!NOTE]
-> **Main backend планируется декомпозировать на микросервисы.** Сейчас в нём собраны файлы, медиа, лица, альбомы, теги и поиск. Эти домены будут вынесены в отдельные сервисы с собственными gRPC-контрактами.
+> **`app-cloud-main-backend` планируется декомпозировать на микросервисы.** Сейчас в нём собраны файлы, медиа, лица, альбомы, теги и поиск. Эти домены будут вынесены в отдельные сервисы с собственными gRPC-контрактами.
 
 ## 🎞️ Путь одной фотографии
 
@@ -257,12 +268,12 @@ flowchart TB
 sequenceDiagram
     autonumber
     participant Phone as 📱 Android
-    participant REST as REST-бэкенд
-    participant Main as Main backend
-    participant K as Kafka
-    participant CV as CV-сервисы
-    participant AI as Ollama · CLIP
-    participant DB as PostgreSQL
+    participant REST as app-cloud-rest-backend
+    participant Main as app-cloud-main-backend
+    participant K as kafka
+    participant CV as face-detector · location-preview
+    participant AI as ai-ollama · image-embedder
+    participant DB as postgresql
 
     Phone->>REST: автозагрузка нового снимка
     REST->>Main: файл сохранён, запусти обработку
@@ -270,7 +281,8 @@ sequenceDiagram
     Main->>K: задача на обработку
     K-->>Main: обработка в фоне
     Main->>CV: превью, адрес по координатам, лица
-    CV->>DB: лица и их векторы
+    CV-->>Main: превью в /data, адрес, лица с векторами
+    Main->>DB: лица и их векторы
     Main->>AI: вектор кадра, текст на фото, проверка чувствительности
     AI-->>Main: результат анализа
     Main->>DB: категория, вектор (pgvector), кластер карты (PostGIS)
